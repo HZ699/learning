@@ -1,0 +1,37 @@
+#include <iostream>
+#include <atlstr.h>
+using namespace std;
+//transform  
+const char tab[] = "0123456789ABCDEF";
+string  trans(string input,int bytes);
+
+//达到的效果是实现数字进制的转化，具体是输入一个十进制数字，输出具有需要字节数的
+//十六进制(若位数不够，则能自动补齐),结果如下
+CString  Strhex(CString DesStr,int bytes);
+
+/*int main(int argc, char const *argv[])
+{
+	
+	CString output=trans("253",1);
+	cout<<output<<endl;
+	system("pause");
+	return 0;
+}*/
+
+string  trans(string input,int bytes){
+	int input_temp=stoi(input);
+	cout<<input_temp<<endl;
+	int m=2*bytes;//位数
+	int max=1<<8*bytes;//能表示的最大数值
+	// cout<<max<<endl;
+	if (input_temp<0||input_temp>=max)return "error_data";//判断input是否符合要求
+	string output=string(m--,'0');
+	while(input_temp){
+		output[m--]=tab[input_temp%16];
+		input_temp/=16;
+	}
+	return output;
+}
+
+整理出的链接如下
+https://www.zybuluo.com/hsj1234/note/425499
