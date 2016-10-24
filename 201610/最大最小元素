@@ -63,10 +63,8 @@ void minmax(int * array,int left ,int right,int &min,int &max)//left左边的坐
 	int rmin,rmax;
 	minmax(array,left,left + cur/2,lmin,lmax);
 	minmax(array,left + cur/2 + 1,right,rmin,rmax);
-	if (lmin <= rmin)min = lmin ;
-	else min = rmin;
-	if (lmax <= rmax)max = rmax;
-	else max = lmax;
+	min = lmin <= rmin ? lmin : rmin ;
+	max = lmax <= rmax ? rmax : lmax ;
 }
 
 
