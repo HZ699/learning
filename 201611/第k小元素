@@ -51,7 +51,6 @@ int Size(T &array){
 	return sizeof(array)/sizeof(array[0]);
 }
 
-
 //函数
 void select(int *a,int left,int right,int k,int &out)//递归方法,a表示数组,left和right表示搜索范围[left,right],
 													//k表示所求的位置,out表示输出的值
