@@ -61,7 +61,7 @@ void select(int *a,int left,int right,int k,int &out)//递归方法,a表示数�
 
 	i = left ;
 	j = right ;
-	change = a[left] ;
+	change = a[left] ;//这里应该随机选取数组,避免出现每次递归划分成一个大部分,一个小部分.
 
 	while(i < j) {
 	    while( a[j] > change && i < j) {
